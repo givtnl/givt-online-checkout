@@ -1,0 +1,39 @@
+name: Givt Online Checkout Azure website CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 12.x ]
+
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: azure/login@v1
+      with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Node ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install and npm run build
+      run: |
+        npm i
+        npm install -g @angular/cli
+        ng build
+    - name: Upload to blob storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+            az storage blob upload-batch --account-name gocstorageaccount --auth-mode key -d '$web' -s ./dist/givt-online-checkout
+
+  # Azure logout
+    - name: logout
+      run: |
+            az logout
+      if: always()
