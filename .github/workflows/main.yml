@@ -30,7 +30,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name gocstorageaccount --auth-mode key -d '$web' -s ./dist/givt-online-checkout
+            az storage blob upload-batch --account-name gocsadebug --auth-mode key -d '$web' -s ./dist/givt-online-checkout
 
   # Azure logout
     - name: logout
