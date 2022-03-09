@@ -27,8 +27,6 @@
 }
 
 .input {
-  display: block;
-  margin: 0 auto;
   height: 40px;
   width: 318px;
   background: #F8F8F8;
@@ -41,6 +39,46 @@
   font-size: 12px;
   line-height: 15px;
   color: #000000;
+}
+
+.currency-symbol {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 16px;
+  border-radius: 12px;
+  border: none;
+  background: #F8F8F8;
+  height: 40px;
+  width: 318px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ABAAAA;
+}
+
+.currency-input {
+  background: #F8F8F8;
+  height: 40px;
+  width: 318px;
+  border-radius: 12px;
+  border: none;
+  padding-left: 8px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.currency-input:focus {
+  outline: none;
+}
+
+.input:focus {
+  outline: none;
 }
 
 .checkbox-container {
