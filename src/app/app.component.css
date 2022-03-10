@@ -1,7 +1,26 @@
+.top-container {
+  text-align: center;
+}
+
+.top-container-page-2 {
+  text-align: left;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 16px 16px 0 16px;
+}
+
 .logo {
+  display: inline-block;
+  margin-top: 40px;
+  align-content: center
+}
+
+.logo-page-2 {
   display: block;
-  margin: auto;
-  padding-top: 40px;
+  margin: 0 auto;
+
 }
 
 .form {

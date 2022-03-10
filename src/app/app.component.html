@@ -1,26 +1,32 @@
-<img class="logo" src="../assets/givt_logo.svg"/>
-<div class="form">
-  <div class="input-container">
-    <label class="label" i18n="@@DonateCharity">Charity - NL</label>
-    <input class="input" />
-  </div>
-  <div class="input-container">
-    <label class="label">Amount</label>
-    <span class="currency-symbol">€<input class="currency-input"/></span>
-  </div>
-  <div class="input-container">
-    <label class="label">Email</label>
-    <input class="input" />
-  </div>
-  <div class="input-container">
-    <label class="label">Payment Method</label>
-    <input class="input" />
-  </div>
+<div class="top-container" [ngClass]="{'top-container-page-2': page == 2}">
+  <img *ngIf="page == 2" class="back-button" src="../assets/back_arrow.svg" (click)="decrementPage()"/>
+  <img [ngClass]="{'logo-page-2': page == 2}" class="logo" src="../assets/givt_logo.svg"/>
 </div>
-<label class="container">I would like a tax certificate for this donation
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+<div *ngIf="page == 1">
+  <div class="form">
+    <div class="input-container">
+      <label class="label">Charity</label>
+      <input class="input" />
+    </div>
+    <div class="input-container">
+      <label class="label">Amount</label>
+      <span class="currency-symbol">€<input class="currency-input"/></span>
+    </div>
+    <div class="input-container">
+      <label class="label">Email</label>
+      <input class="input" />
+    </div>
+    <div class="input-container">
+      <label class="label">Payment Method</label>
+      <input class="input" />
+    </div>
+  </div>
+  <label class="container">I would like a tax certificate for this donation
+    <input type="checkbox">
+    <span class="checkmark"></span>
+  </label>
+  <button class="button" (click)="incrementPage()">next</button>
+</div>
+<div *ngIf="page == 2">
 
-<button class="button">next</button>
-
+</div>

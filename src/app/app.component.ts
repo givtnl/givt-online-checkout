@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'givt-online-checkout';
+  page = 1;
+
+  incrementPage() {
+    this.page++
+  }
+
+  decrementPage() {
+    this.page--
+  }
 }
