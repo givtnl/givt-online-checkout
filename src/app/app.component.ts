@@ -18,6 +18,9 @@ export class AppComponent {
   }
 
   decrementPage() {
+    if (this.page == 2) {
+      this.toggleTaxCertificate()
+    }
     this.page--
   }
 
