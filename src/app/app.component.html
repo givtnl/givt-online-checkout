@@ -46,7 +46,7 @@
 <div *ngIf="page == 3">
   <div class="centered-container flex-container">
     <h1 class="success-title">You're all done!</h1>
-    <img class="party-guy" src="../assets/party-guy.svg\">
+    <img class="party-guy" src="../assets/party-guy.svg">
     <p *ngIf="taxCertificate" class="thank-you-text">Thank you for donating with Givt</p>
     <p *ngIf="!taxCertificate" class="thank-you-text">Givt provides you with a personal overview and a yearly tax report. Doing your taxes was never this easy! <span class="learn-more-text">Want to learn more?</span></p>
     <button class="button" [ngClass]="{'margin-big': taxCertificate,'margin-small': !taxCertificate}"><span *ngIf="taxCertificate">to my overview</span><span *ngIf="!taxCertificate">create an account</span></button>
