@@ -7,13 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'givt-online-checkout';
+  taxCertificate = false;
   page = 1;
 
   incrementPage() {
     this.page++
+    if (!this.taxCertificate) {
+      this.page++
+    }
   }
 
   decrementPage() {
     this.page--
+  }
+
+  toggleTaxCertificate() {
+    this.taxCertificate = !this.taxCertificate
   }
 }
