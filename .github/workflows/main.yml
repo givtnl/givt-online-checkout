@@ -25,13 +25,12 @@ jobs:
       run: |
         npm i
         npm install -g @angular/cli
-        ng build
+        ng build --localize
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob delete-batch -s '$web' --account-name gocsadebug --auth-mode key
-            az storage blob upload-batch --account-name gocsadebug --auth-mode key -d '$web' -s ./dist/givt-online-checkout
+            az storage blob upload-batch --account-name gocsadebug --auth-mode key -d '$web' -s ./dist/givt-online-checkout/en
 
   # Azure logout
     - name: logout

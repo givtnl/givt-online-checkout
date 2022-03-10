@@ -47,7 +47,7 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "localize": ["en-gb"]
+            "localize": true
           },
           "configurations": {
             "production": {
