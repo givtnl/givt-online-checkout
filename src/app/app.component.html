@@ -1,4 +1,4 @@
-<div class="top-container" [ngClass]="{'top-container-page-2': page == 2}">
+<div class="centered-container top-container" [ngClass]="{'top-container-page-2': page == 2}">
   <img *ngIf="page == 2" class="back-button" src="../assets/back_arrow.svg" (click)="decrementPage()"/>
   <img [ngClass]="{'logo-page-2': page == 2}" class="logo" src="../assets/givt_logo.svg"/>
 </div>
